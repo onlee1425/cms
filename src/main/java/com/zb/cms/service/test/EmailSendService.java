@@ -1,4 +1,4 @@
-package com.zb.cms.client.service;
+package com.zb.cms.service.test;
 
 import com.zb.cms.client.MailgunClient;
 import com.zb.cms.client.mailgun.SendMailForm;
