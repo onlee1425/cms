@@ -30,6 +30,9 @@ public class Customer extends BaseEntity {
     private String phone;
     private LocalDate birth;
 
+    @Column(columnDefinition = "int default 0")
+    private Integer balance;
+
     //email verify
     private LocalDateTime verifyExpiredAt;
     private String verificationCode;
