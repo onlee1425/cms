@@ -2,6 +2,7 @@ package com.zb.cms.user.service;
 
 import com.zb.cms.user.domain.SignUpForm;
 import com.zb.cms.user.domain.model.Customer;
+import com.zb.cms.user.service.customer.SignUpCustomerService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

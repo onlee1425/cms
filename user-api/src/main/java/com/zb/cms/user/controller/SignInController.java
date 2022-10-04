@@ -16,8 +16,15 @@ public class SignInController {
 
     private final SignInApplication signInApplication;
 
+    // 고객
     @PostMapping("/customer")
     public ResponseEntity<String> signInCustomer(@RequestBody SignInForm form){
         return ResponseEntity.ok(signInApplication.customerLoginToken(form));
+    }
+
+    // 셀러
+    @PostMapping("/seller")
+    public ResponseEntity<String> signInSeller(@RequestBody SignInForm form){
+        return ResponseEntity.ok(signInApplication.sellerLoginToken(form));
     }
 }
