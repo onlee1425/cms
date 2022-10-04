@@ -1,6 +1,6 @@
 package com.zb.cms.user.config.filter;
 
-import com.zb.cms.user.service.CustomerService;
+import com.zb.cms.user.service.customer.CustomerService;
 import com.zb.domain.config.JwtAuthenticationProvider;
 import com.zb.domain.domain.common.UserVo;
 import lombok.RequiredArgsConstructor;
