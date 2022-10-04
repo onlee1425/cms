@@ -1,0 +1,82 @@
+### 회원가입 ( 고객 )
+POST http://localhost:8080/signup/customer
+Content-Type: application/json
+
+{
+  "birth": "2022-10-05",
+  "email": "onlee1425@naver.com",
+  "name": "string",
+  "password": "string",
+  "phone": "string"
+}
+
+### 이메일 인증 ( 고객 )
+GET http://localhost:8080/signup/customer/verify?email=onlee1425@naver.com&code=RUfZmhE8S0
+
+
+### 로그인 ( 고객 )
+POST http://localhost:8080/signin/customer
+Content-Type: application/json
+
+{
+  "email": "onlee1425@naver.com",
+  "password": "string"
+}
+
+### 회원 정보 조회 ( 고객 )
+GET http://localhost:8080/customer/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuTXh6T2p3WStaTFBZdWJNMXc3ajJmNmtVTTduckxyL3JybWNZdWMxYXNVPSIsImp0aSI6InVXRzlXUTdFODdBTHRCaTliRVl0UWc9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NjQ5MDIwMzYsImV4cCI6MTY2NDk4ODQzNn0.Q5XlTg8d18X3VXBbPH4x4QDYmDyzx0f3WAs3jUB9WB8
+
+{
+  "email": "onlee1425@naver.com",
+  "password": "string"
+}
+
+### 잔액 변경 ( 고객 )
+POST http://localhost:8080/customer/balance
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuTXh6T2p3WStaTFBZdWJNMXc3ajJmNmtVTTduckxyL3JybWNZdWMxYXNVPSIsImp0aSI6InVXRzlXUTdFODdBTHRCaTliRVl0UWc9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NjQ5MDIwMzYsImV4cCI6MTY2NDk4ODQzNn0.Q5XlTg8d18X3VXBbPH4x4QDYmDyzx0f3WAs3jUB9WB8
+
+{
+  "from": "admin",
+  "message": "event",
+  "money": 500
+}
+
+##############################
+
+### 회원가입 ( 셀러 )
+POST http://localhost:8080/signup/seller
+Content-Type: application/json
+
+{
+  "birth": "2022-10-05",
+  "email": "onlee1425@naver.com",
+  "name": "string",
+  "password": "string",
+  "phone": "string"
+}
+
+### 이메일 인증 ( 셀러 )
+GET http://localhost:8080/signup/seller/verify?email=onlee1425@naver.com&code=TXiXnseyVx
+
+
+### 로그인 ( 셀러 )
+POST http://localhost:8080/signin/seller
+Content-Type: application/json
+
+{
+  "email": "onlee1425@naver.com",
+  "password": "string"
+}
+
+### 회원 정보 조회 ( 셀러 )
+GET http://localhost:8080/seller/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuTXh6T2p3WStaTFBZdWJNMXc3ajJmNmtVTTduckxyL3JybWNZdWMxYXNVPSIsImp0aSI6InhoTDJMQWtHMjVyenk2dlNab2xleGc9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjY0OTAzMTUzLCJleHAiOjE2NjQ5ODk1NTN9.K16MeP2NBWSLwNqa5afImZIh0BiZwj0MkmSzFcVIOBg
+
+
+  "email": "onlee1425@naver.com",
+  "password": "string"
+}
