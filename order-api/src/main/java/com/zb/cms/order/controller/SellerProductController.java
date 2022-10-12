@@ -37,7 +37,7 @@ public class SellerProductController {
 
     // 상품 업데이트
     @PutMapping
-    public ResponseEntity<ProductDto> UpdateProduct(@RequestHeader(name = "X-AUTH-TOKEN") String token,
+    public ResponseEntity<ProductDto> updateProduct(@RequestHeader(name = "X-AUTH-TOKEN") String token,
                                                     @RequestBody UpdateProductForm form) {
 
         return ResponseEntity.ok(ProductDto.from(productService.updateProduct(provider.getUserVo(token).getId(),form)));
@@ -46,10 +46,28 @@ public class SellerProductController {
 
     //item 업데이트
     @PutMapping("/item")
-    public ResponseEntity<ProductItemDto> UpdateProductItem(@RequestHeader(name = "X-AUTH-TOKEN") String token,
+    public ResponseEntity<ProductItemDto> updateProductItem(@RequestHeader(name = "X-AUTH-TOKEN") String token,
                                                      @RequestBody UpdateProductItemForm form) {
 
         return ResponseEntity.ok(ProductItemDto.from(productItemService.updateProductItem(provider.getUserVo(token).getId(),form)));
+
+    }
+
+    // 상품 삭제
+    @DeleteMapping
+    public ResponseEntity<Void> deleteProduct(@RequestHeader(name = "X-AUTH-TOKEN") String token,
+                                                    @RequestParam Long id) {
+        productService.deleteProduct(provider.getUserVo(token).getId(),id);
+        return ResponseEntity.ok().build();
+
+    }
+
+    // item 삭제
+    @DeleteMapping("/item")
+    public ResponseEntity<Void> deleteProductItem(@RequestHeader(name = "X-AUTH-TOKEN") String token,
+                                                  @RequestParam Long id) {
+        productItemService.deleteProductItem(provider.getUserVo(token).getId(),id);
+        return ResponseEntity.ok().build();
 
     }
 }

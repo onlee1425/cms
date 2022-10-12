@@ -62,3 +62,29 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuTXh6T2p3WStaTFBZdWJNMXc3ajJmNmtVT
 }
 
 
+### 상품 삭제
+DELETE http://localhost:8082/seller/product?id=1
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuTXh6T2p3WStaTFBZdWJNMXc3ajJmNmtVTTduckxyL3JybWNZdWMxYXNVPSIsImp0aSI6InhoTDJMQWtHMjVyenk2dlNab2xleGc9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjY1NTA1ODY4LCJleHAiOjE2NjU1OTIyNjh9.C8AB5SLRA-syPgPOBnlC8uwQIx4ZhpJhaIQ0G6KtfFc
+
+
+{
+  "description": "상품 설명",
+  "items": [
+    {
+      "id": 1,
+      "count": 1,
+      "name": "270",
+      "price": 10000
+    }
+  ],
+  "name": "나이키 에어포스"
+}
+
+### 아이템 삭제
+DELETE http://localhost:8082/seller/product/item?id=2
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuTXh6T2p3WStaTFBZdWJNMXc3ajJmNmtVTTduckxyL3JybWNZdWMxYXNVPSIsImp0aSI6InhoTDJMQWtHMjVyenk2dlNab2xleGc9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjY1NTA1ODY4LCJleHAiOjE2NjU1OTIyNjh9.C8AB5SLRA-syPgPOBnlC8uwQIx4ZhpJhaIQ0G6KtfFc
+
+
+
