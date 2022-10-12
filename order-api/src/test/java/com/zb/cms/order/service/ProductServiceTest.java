@@ -31,7 +31,7 @@ class ProductServiceTest {
 
         AddProductForm form = makeProductForm("나이키 에어포스", "신발", 3);
 
-        Product p = productService.addproduct(sellerid, form);
+        Product p = productService.addProduct(sellerid, form);
 
         Product result = productRepository.findWithProductItemsById(p.getId()).get();
 

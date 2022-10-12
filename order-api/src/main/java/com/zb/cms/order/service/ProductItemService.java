@@ -3,6 +3,7 @@ package com.zb.cms.order.service;
 import com.zb.cms.order.domain.model.Product;
 import com.zb.cms.order.domain.model.ProductItem;
 import com.zb.cms.order.domain.product.AddProductItemForm;
+import com.zb.cms.order.domain.product.UpdateProductItemForm;
 import com.zb.cms.order.domain.repository.ProductItemRepository;
 import com.zb.cms.order.domain.repository.ProductRepository;
 import com.zb.cms.order.exception.CustomException;
@@ -29,5 +30,15 @@ public class ProductItemService {
         ProductItem productItem = ProductItem.of(sellerId, form);
         product.getProductItems().add(productItem);
         return product;
+    }
+
+    @Transactional
+    public ProductItem updateProductItem(Long sellerId, UpdateProductItemForm form) {
+        ProductItem productItem = productItemRepository.findById(form.getId())
+                .filter(pi -> pi.getSellerId().equals(sellerId)).orElseThrow(() -> new CustomException(ErrorCode.NOT_FOUNT_ITEM));
+        productItem.setName(form.getName());
+        productItem.setCount(form.getCount());
+        productItem.setPrice(form.getPrice());
+        return productItem;
     }
 }
