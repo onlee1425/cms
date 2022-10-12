@@ -17,7 +17,6 @@ import org.springframework.transaction.annotation.Transactional;
 public class ProductService {
     private final ProductRepository productRepository;
 
-    //상품추가
     @Transactional
     public Product addProduct(Long sellerId, AddProductForm form){
         return productRepository.save(Product.of(sellerId,form));
@@ -40,5 +39,12 @@ public class ProductService {
             item.setCount(itemForm.getCount());
         }
         return product;
+    }
+
+    @Transactional
+    public void deleteProduct (Long sellerId,Long productId){
+        Product product = productRepository.findBySellerIdAndId(sellerId, productId)
+                .orElseThrow(()->new CustomException(ErrorCode.NOT_FOUND_PRODUCT));
+        productRepository.delete(product);
     }
 }
