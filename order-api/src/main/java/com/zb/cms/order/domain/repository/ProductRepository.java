@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 import java.util.Optional;
 
 @Repository
-public interface ProductRepository extends JpaRepository<Product,Long> {
+public interface ProductRepository extends JpaRepository<Product,Long>, ProductRepositoryCustom{
 
     //productItems가 Load 되도록 설정
     @EntityGraph(attributePaths = {"productItems"},type = EntityGraph.EntityGraphType.LOAD)
@@ -17,5 +17,7 @@ public interface ProductRepository extends JpaRepository<Product,Long> {
 
     @EntityGraph(attributePaths = {"productItems"},type = EntityGraph.EntityGraphType.LOAD)
     Optional<Product> findBySellerIdAndId(Long sellerId, Long id);
+
+
 
 }
