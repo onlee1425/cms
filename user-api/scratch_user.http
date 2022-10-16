@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 ### 이메일 인증 ( 고객 )
-GET http://localhost:8081/signup/customer/verify?email=onlee1425@naver.com&code=RUfZmhE8S0
+GET http://localhost:8081/signup/customer/verify?email=onlee1425@naver.com&code=bhtnhzpzYA
 
 
 ### 로그인 ( 고객 )

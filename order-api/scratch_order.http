@@ -1,19 +1,18 @@
 ### 상품 추가
 POST http://localhost:8082/seller/product
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuTXh6T2p3WStaTFBZdWJNMXc3ajJmNmtVTTduckxyL3JybWNZdWMxYXNVPSIsImp0aSI6InhoTDJMQWtHMjVyenk2dlNab2xleGc9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjY1Njc0NjEwLCJleHAiOjE2NjU3NjEwMTB9.Fq4-cV3bmENB7_zIxM2pLNgPIPJQ5eSmwDxAObb6Adc
-
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuTXh6T2p3WStaTFBZdWJNMXc3ajJmNmtVTTduckxyL3JybWNZdWMxYXNVPSIsImp0aSI6InhoTDJMQWtHMjVyenk2dlNab2xleGc9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NjU5MzY1ODYsImV4cCI6MTY2NjAyMjk4Nn0.2u_RtJoM9dXPc1oTjSwOJ4UgOMS6WtsRQ2-xj7LBW80
 
 {
-  "description": "상품 설명",
+  "description": "상품",
   "items": [
     {
       "count": 1,
-      "name": "270",
+      "name": "나이키",
       "price": 10000
     }
   ],
-  "name": "나이키 에어포스 2"
+  "name": "에어포스"
 }
 
 ### 상품 내 아이템 추가
@@ -95,3 +94,24 @@ Content-Type: application/json
 ### 상품 디테일 검색
 GET http://localhost:8082/search/product/detail?productId=2
 Content-Type: application/json
+
+
+### 카트 추가
+POST http://localhost:8082/customer/cart
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuTXh6T2p3WStaTFBZdWJNMXc3ajJmNmtVTTduckxyL3JybWNZdWMxYXNVPSIsImp0aSI6InhoTDJMQWtHMjVyenk2dlNab2xleGc9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NjU5MzY1ODYsImV4cCI6MTY2NjAyMjk4Nn0.2u_RtJoM9dXPc1oTjSwOJ4UgOMS6WtsRQ2-xj7LBW80
+
+{
+  "description": "상품",
+  "id": 1,
+  "items": [
+    {
+      "count": 1,
+      "id": 1,
+      "name": "나이키",
+      "price": 10000
+    }
+  ],
+  "name": "에어포스",
+  "sellerId": 0
+}
