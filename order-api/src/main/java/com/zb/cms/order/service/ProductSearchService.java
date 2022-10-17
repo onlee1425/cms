@@ -22,7 +22,7 @@ public class ProductSearchService {
 
     //아이템 목록
     public List<Product> getListByProductIds(List<Long> productIds){
-        return productRepository.findAllById(productIds);
+        return productRepository.findAllByIdIn(productIds);
     }
 
     //검색을 통한 조회
