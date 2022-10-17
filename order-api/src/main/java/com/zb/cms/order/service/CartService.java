@@ -19,14 +19,21 @@ public class CartService {
 
     private final RedisClient redisClient;
 
-    //상품 추가
+    //카트 조회
     public Cart getCart(Long customerId){
-        return redisClient.get(customerId,Cart.class);
+        Cart cart = redisClient.get(customerId,Cart.class);
+        return cart!=null?cart:new Cart();
+    }
+
+    //카트 업데이트
+    public Cart putCart(Long customerId,Cart cart){
+         redisClient.put(customerId,cart);
+         return cart;
     }
 
 
     public Cart addCart(Long customerId, AddProductCartForm form) {
-        Cart cart = redisClient.get(customerId, Cart.class); //customerId와 Cart라는 테이블을 가져옴
+        Cart cart = redisClient.get(customerId, Cart.class); //customerId와 Cart 테이블을 가져옴
         if (cart == null) { //카트가 null 일경우 새 카트를 만들고, customerId도 넣어줌
             cart = new Cart();
             cart.setCustomerId(customerId);
