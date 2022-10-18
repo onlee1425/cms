@@ -37,6 +37,15 @@ public class CartApplication {
         return cartService.addCart(customerId, form);
     }
 
+    // 장바구니 변경
+    public Cart updateCart(Long customerId,Cart cart){
+       cartService.putCart(customerId,cart);
+       return getCart(customerId);
+    }
+
+
+
+
     //cart 조회
     /*
     장바구니 상품 조회
