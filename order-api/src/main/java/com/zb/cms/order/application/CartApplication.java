@@ -52,6 +52,7 @@ public class CartApplication {
      */
     public Cart getCart(Long customerId) {
         Cart cart = refreshCart(cartService.getCart(customerId));
+        cartService.putCart(cart.getCustomerId(),cart);
         Cart returnCart = new Cart();
         returnCart.setCustomerId(customerId);
         returnCart.setProducts(cart.getProducts());
@@ -68,7 +69,7 @@ public class CartApplication {
         cartService.putCart(customerId,null);
     }
 
-    private Cart refreshCart(Cart cart) {
+    protected Cart refreshCart(Cart cart) {
         // 1. 상품 , 상품의 아이템 정보, 가격, 수량이 변경되었는지 체크 - 변동이 있을경우 알람
         // 2. 변동된 경우 상품의 구매가능한 수량, 변동된 가격으로 장바구니를 업데이트.
         Map<Long, Product> productMap = productSearchService.getListByProductIds(
@@ -145,7 +146,7 @@ public class CartApplication {
                 cart.addMessage(builder.toString());
             }
         }
-        cartService.putCart(cart.getCustomerId(),cart);
+
         return cart;
     }
 

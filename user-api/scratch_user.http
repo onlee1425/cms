@@ -36,12 +36,12 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuTXh6T2p3WStaTFBZdWJNMXc3ajJmNmtVT
 ### 잔액 변경 ( 고객 )
 POST http://localhost:8081/customer/balance
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuTXh6T2p3WStaTFBZdWJNMXc3ajJmNmtVTTduckxyL3JybWNZdWMxYXNVPSIsImp0aSI6InVXRzlXUTdFODdBTHRCaTliRVl0UWc9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NjQ5MDIwMzYsImV4cCI6MTY2NDk4ODQzNn0.Q5XlTg8d18X3VXBbPH4x4QDYmDyzx0f3WAs3jUB9WB8
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuTXh6T2p3WStaTFBZdWJNMXc3ajJmNmtVTTduckxyL3JybWNZdWMxYXNVPSIsImp0aSI6InhoTDJMQWtHMjVyenk2dlNab2xleGc9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NjYxODM1ODksImV4cCI6MTY2NjI2OTk4OX0.bKBQ-s_XoaRP28exo6dj3qhNqAyHwkUrQIw_Jgi5OxI
 
 {
   "from": "admin",
-  "message": "event",
-  "money": 500
+  "message": "충전",
+  "money": 100000
 }
 
 ##############################
