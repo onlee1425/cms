@@ -27,11 +27,11 @@ class ProductServiceTest {
 
     @Test
     void ADD_PRODUCT_TEST() {
-        Long sellerid = 1L;
+        Long sellerId = 1L;
 
         AddProductForm form = makeProductForm("나이키 에어포스", "신발", 3);
 
-        Product p = productService.addProduct(sellerid, form);
+        Product p = productService.addProduct(sellerId, form);
 
         Product result = productRepository.findWithProductItemsById(p.getId()).get();
 
